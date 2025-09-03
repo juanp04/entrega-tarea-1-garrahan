@@ -1,4 +1,3 @@
-// app/index.tsx
 import React, { useState } from "react";
 import { Pressable, StyleSheet, Text, View } from "react-native";
 
@@ -25,7 +24,7 @@ function Tarjeta({
 
 export default function HomeScreen() {
   const data = ["Tarjeta 1", "Tarjeta 2", "Tarjeta 3"];
-  const [selectedIndex, setSelectedIndex] = useState<number | null>(0);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null); // 👈 arranca sin ninguna activa
 
   return (
     <View style={styles.screen}>
@@ -46,12 +45,12 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   screen: {
     flex: 1,
-    backgroundColor: "#f5f5f5"
+    backgroundColor: "#f5f5f5",
   },
   cardsWrapper: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center"
+    justifyContent: "center", 
+    alignItems: "center",
   },
   card: {
     width: "70%",
@@ -59,11 +58,11 @@ const styles = StyleSheet.create({
     marginVertical: 12,
     borderRadius: 6,
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
   },
   cardText: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "white"
+    color: "white",
   },
 });
